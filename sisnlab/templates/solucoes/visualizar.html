@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+{% endblock title %}
+
+{{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h4><strong> DADOS DO SOLUCAO</strong></h4>
+    </div>
+    
+    <div class="card-body">
+        <h5 class="card-title">Usuário: {{solucao.usuario}}</h5>        
+        <h5 class="card-title">Nome: {{solucao.nome}}</h5>        
+        <h5 class="card-title">Sala: {{solucao.sala}}</h5>
+        <h5 class="card-title">Armario: {{solucao.armario}}</h5>
+        <h5 class="card-title">Bancada: {{solucao.bancada}}</h5>
+        <h5 class="card-title">Estante: {{solucao.estante}}</h5>
+        <h5 class="card-title">Prateleira: {{solucao.prateleira}}</h5>
+        <h5 class="card-title">Gaveta: {{solucao.gaveta}}</h5>
+        <h5 class="card-title">Observações: {{solucao.obs}}</h5>      
+        
+            <form method="post">
+            {% csrf_token %}
+             <a href="{{request.META.HTTP_REFERER}}" class="btn btn-primary">Voltar</a>            
+        </form>
+
+
+    </div>
+</div>
+
+{% endblock content %}
